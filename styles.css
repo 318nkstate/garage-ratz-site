@@ -1,0 +1,14 @@
+img {
+   width: 30em;
+   height: 30em;
+   align-self: center;
+   justify-self: stretch;
+}
+body{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   height: 100vh;
+   overflow: hidden;
+}
