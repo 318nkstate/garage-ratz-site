@@ -61,9 +61,10 @@
       width: 25rem;
       margin: 0.5em;
       padding: 1em;
+
    }
    img{
-      width: 24rem;
+      width: 100%;
       align-self: center;
    }
    a{

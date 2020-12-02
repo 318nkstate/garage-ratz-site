@@ -35,6 +35,12 @@
       border-bottom: 0.15em solid #020202;
       transition: 60ms;
    }
+   li:active {
+      cursor: pointer;
+      border-top: 0.15em solid #020202;
+      border-bottom: 0.15em solid #020202;
+      transition: 60ms;
+   }
 </style>
 <svelte:head>
    <script>

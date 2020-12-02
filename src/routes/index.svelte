@@ -147,7 +147,6 @@ import Static from '../components/static-placeholder.svelte';
 	<title>The Garage Ratz Website</title>
 </svelte:head>
 
-
 <div class="container">
 	<h1>{headliner.Site_Headliner}</h1>
 	<div class="divider"/>
@@ -158,7 +157,7 @@ import Static from '../components/static-placeholder.svelte';
 		{:else}
 		<Static/>
 		{/if}
-		
+
 		{#if nextShow.date != null }
 			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} @ {nextShow.time}</strong>
@@ -182,6 +181,5 @@ import Static from '../components/static-placeholder.svelte';
 				</div>
 			{/each}
 		{/if}
-	</div>
-	
+	</div>	
 </div>
