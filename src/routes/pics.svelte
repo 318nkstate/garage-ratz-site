@@ -18,7 +18,6 @@
 	*{
 		color: white;
 	}
-
 	.container{
 		display: flex;
 		flex-direction: row;
@@ -36,7 +35,6 @@
 		padding: 0.25em;
 		align-self: center;
 	}
-
 </style>
 <svelte:head>
 	<title>Pics Page</title>

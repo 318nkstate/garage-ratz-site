@@ -17,12 +17,9 @@
 			info
 		};
    }
-   
 </script>
 <script>
-
    export let info;
-   
 </script>
 
    <svelte:head>
@@ -48,7 +45,6 @@
       *{
          color: white;
       }
-   
       h1{
          text-align: center;
          font-size: 2.8em;
