@@ -12,14 +12,14 @@ polka().use(
 	helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'"],
+          defaultSrc: ["'self'", "dash.garageratz.com"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'"],
           // Has to be unsafe-inline currently, because svelte-awesome & svelte-image sets inline style
           styleSrc: ["'self' 'unsafe-inline'"],
           // data: needed for svelte-image placeholders and svelte-awesome icons
-          imgSrc: ["'self'", 'data:'],
+          imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:'],
           // localhost:10000 needed by __sapper__ itself
           connectSrc: ["'self'", 'http://localhost:10000'],
         },
