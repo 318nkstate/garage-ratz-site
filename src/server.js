@@ -12,7 +12,7 @@ polka().use(
 	helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "dash.garageratz.com"],
+          defaultSrc: ["'self'", "CMS_APP_API_URL"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'"],
