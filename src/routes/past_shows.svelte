@@ -7,7 +7,6 @@
       try {
          const res = await axios.get(`${CMS_APP_API_URL}/shows`);
 		   shows = res.data;
-		   console.log(shows);
       } catch(e){
          error = e;
       }

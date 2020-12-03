@@ -49,9 +49,9 @@
    <nav {segment} {page}>  
       <li><a aria-current="{segment === 'past shows' ? 'page' : undefined}"  rel=prefetch  href="past_shows">Past Shows</a></li>
       <li><a aria-current="{segment === 'pics' ? 'page' : undefined}" rel=prefetch href="pics">Pics</a></li>
-      <li><a aria-current="{segment === 'vid' ? 'page' : undefined}" href="vids">Vids</a></li>
+      <li><a aria-current="{segment === 'vid' ? 'page' : undefined}" rel=prefetch href="vids">Vids</a></li>
       <li><a aria-current="{segment === 'info' ? 'page' : undefined}"  href="info">Band Info</a></li>      
-      <li><a aria-current="{segment === 'subscribe' ? 'page' : undefined}" href="subscribe">Subscribe</a></li>
+      <li><a aria-current="{segment === 'subscribe' ? 'page' : undefined}" rel=prefetch href="subscribe">Subscribe</a></li>
    </nav>
    <p><a href=".">GARAGE RATZ</a> © 2017 - {new Date().getFullYear()}</p>
    <p>Inquiries? Hit us up @ <a id="EML" href = "mailto: garageratz570@gmail.com">this Link</a>

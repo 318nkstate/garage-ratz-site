@@ -50,6 +50,8 @@
 	{#each videos.vids.reverse() as vid}
 		<video controls class="vid">
          <source src={CMS_APP_API_URL + vid.url} type={vid.mime} >
-      </video>
+			<track kind="captions">
+
+		</video>
 	{/each}
 </div>
