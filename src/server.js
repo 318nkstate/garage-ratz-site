@@ -31,7 +31,13 @@ polka().use(
           connectSrc: ["'self'", 'CMS_APP_API_URL' , 'https://localhost:10000'],
         },
       },
-     referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+     referrerPolicy: { 
+		 policy: "strict-origin-when-cross-origin" 
+	 },
+	 hsts: {
+	 	maxAge: 31536000,
+		preload: true,
+	 },
     })
 );
 
