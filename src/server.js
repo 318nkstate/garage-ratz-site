@@ -9,13 +9,14 @@ import uuid from "uuid";
 const { PORT, NODE_ENV, CMS_APP_API_URL } = process.env;
 const dev = NODE_ENV === 'development';
 
+let app = polka();
 
-polka().use((req, res, next) => {
+app.use((req, res, next) => {
 	res.locals.nonce = uuid();
 	next();
 });
 
-polka().use(
+app.use(
         helmet({
       contentSecurityPolicy: {
         directives: {
@@ -42,7 +43,7 @@ polka().use(
     })
 );
 
-polka() // You can also use Express
+app // You can also use Express
 	.use(
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
