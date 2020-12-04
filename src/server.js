@@ -23,7 +23,7 @@ app.use(
           defaultSrc: ["'self'", "https://dash.garageratz.com"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
-          scriptSrc: ["'self'", (_req, res) => `'nonce-${res.locals.nonce}'`],
+          scriptSrc: ["'self' 'unsafe-inline'", (_req, res) => `'nonce-${res.locals.nonce}'`],
           // Has to be unsafe-inline currently, because svelte-awesome & svelte-image sets inline style
           styleSrc: ["'self' 'unsafe-inline'"],
           // data: needed for svelte-image placeholders and svelte-awesome icons
