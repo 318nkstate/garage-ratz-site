@@ -1,6 +1,6 @@
 require('dotenv').config();
 import sirv from 'sirv';
-import polka from 'polka';
+import express from 'express';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 import helmet from "helmet";
@@ -9,7 +9,7 @@ import uuid from "uuid";
 const { PORT, NODE_ENV, CMS_APP_API_URL } = process.env;
 const dev = NODE_ENV === 'development';
 
-let app = polka();
+let app = express();
 
 app.use((req, res, next) => {
 	res.locals.nonce = uuid();
