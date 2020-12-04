@@ -30,7 +30,7 @@ app.use(
           imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:', "https://dash.garageratz.com"],
           // localhost:10000 needed by __sapper__ itself
           connectSrc: ["'self'", 'https://garageratz.com:10000', "https://dash.garageratz.com"],
-	  mediaSrc: ["'self'", "CMS_APP_API_URL"],
+	  mediaSrc: ["'self'", "https://dash.garageratz.com"],
 	  upgradeInsecureRequests: [],
         },
       },
