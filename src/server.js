@@ -19,7 +19,7 @@ polka().use(
         helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "CMS_APP_API_URL", "*.garageratz.com"],
+          defaultSrc: ["'self'", "CMS_APP_API_URL", "https://*.garageratz.com"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
@@ -28,7 +28,7 @@ polka().use(
           // data: needed for svelte-image placeholders and svelte-awesome icons
           imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:'],
           // localhost:10000 needed by __sapper__ itself
-          connectSrc: ["'self'", 'CMS_APP_API_URL' , 'http://localhost:10000'],
+          connectSrc: ["'self'", 'CMS_APP_API_URL' , 'https://localhost:10000'],
         },
       },
      referrerPolicy: { policy: "strict-origin-when-cross-origin" },
