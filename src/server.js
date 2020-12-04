@@ -29,6 +29,7 @@ polka().use(
           imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:'],
           // localhost:10000 needed by __sapper__ itself
           connectSrc: ["'self'", 'CMS_APP_API_URL' , 'https://localhost:10000'],
+	  upgradeInsecureRequests: [],
         },
       },
      referrerPolicy: { 
