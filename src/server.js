@@ -29,7 +29,7 @@ app.use(
           // data: needed for svelte-image placeholders and svelte-awesome icons
           imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:', "dash.garageratz.com"],
           // localhost:10000 needed by __sapper__ itself
-          connectSrc: ["'self'", 'https://localhost:10000', "dash.garageratz.com"],
+          connectSrc: ["'self'", 'https://garageratz.com:10000', "dash.garageratz.com"],
 	  upgradeInsecureRequests: [],
         },
       },
