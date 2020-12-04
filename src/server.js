@@ -20,7 +20,7 @@ app.use(
         helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "CMS_APP_API_URL"],
+          defaultSrc: ["'self'", "https://dash.garageratz.com"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
