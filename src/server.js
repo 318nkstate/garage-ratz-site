@@ -27,9 +27,9 @@ app.use(
           // Has to be unsafe-inline currently, because svelte-awesome & svelte-image sets inline style
           styleSrc: ["'self' 'unsafe-inline'"],
           // data: needed for svelte-image placeholders and svelte-awesome icons
-          imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:'],
+          imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:', "dash.garageratz.com"],
           // localhost:10000 needed by __sapper__ itself
-          connectSrc: ["'self'", 'https://localhost:10000'],
+          connectSrc: ["'self'", 'https://localhost:10000', "dash.garageratz.com"],
 	  upgradeInsecureRequests: [],
         },
       },
