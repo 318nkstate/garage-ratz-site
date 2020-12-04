@@ -4,7 +4,7 @@ import express from 'express';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 import helmet from "helmet";
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 const { PORT, NODE_ENV, CMS_APP_API_URL } = process.env;
 const dev = NODE_ENV === 'development';
@@ -12,7 +12,7 @@ const dev = NODE_ENV === 'development';
 let app = express();
 
 app.use((req, res, next) => {
-	res.locals.nonce = uuid();
+	res.locals.nonce = uuidv4();
 	next();
 });
 
@@ -20,7 +20,7 @@ app.use(
         helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "CMS_APP_API_URL", "https://*.garageratz.com"],
+          defaultSrc: ["'self'"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
@@ -29,7 +29,7 @@ app.use(
           // data: needed for svelte-image placeholders and svelte-awesome icons
           imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:'],
           // localhost:10000 needed by __sapper__ itself
-          connectSrc: ["'self'", 'CMS_APP_API_URL' , 'https://localhost:10000'],
+          connectSrc: ["'self'", 'https://localhost:10000'],
 	  upgradeInsecureRequests: [],
         },
       },
