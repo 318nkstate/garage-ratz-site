@@ -20,17 +20,17 @@ app.use(
         helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "https://dash.garageratz.com"],
+          defaultSrc: ["'self'"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
           // Has to be unsafe-inline currently, because svelte-awesome & svelte-image sets inline style
           styleSrc: ["'self' 'unsafe-inline'"],
           // data: needed for svelte-image placeholders and svelte-awesome icons
-          imgSrc: ["'self'", 'data:', 'mediastream:', 'blob:', "https://dash.garageratz.com"],
+          imgSrc: ["'self'", 'data:'],
           // localhost:10000 needed by __sapper__ itself
-          connectSrc: ["'self'", 'https://garageratz.com:10000', "https://dash.garageratz.com"],
-	  mediaSrc: ["'self'", "https://dash.garageratz.com"],
+          connectSrc: ["'self'", 'https://garageratz.com:10000'],
+	  mediaSrc: ["'self'"],
 	  upgradeInsecureRequests: [],
         },
       },
