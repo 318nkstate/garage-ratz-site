@@ -5,7 +5,6 @@ import compression from 'compression';
 import * as sapper from '@sapper/server';
 import helmet from "helmet";
 import { v4 as uuidv4 } from "uuid";
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const { PORT, NODE_ENV, CMS_APP_API_URL } = process.env;
 const dev = NODE_ENV === 'development';
@@ -16,8 +15,6 @@ app.use((req, res, next) => {
 	res.locals.nonce = uuidv4();
 	next();
 });
-
-app.use(createProxyMiddleware('/', {target: 'https://dash.garageratz.com'}));
 
 app.use(
         helmet({
