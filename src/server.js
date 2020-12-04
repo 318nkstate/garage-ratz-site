@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(createProxyMiddleware('/', {target: }));
+app.use(createProxyMiddleware('/', {...}));
 
 app.use(
         helmet({
