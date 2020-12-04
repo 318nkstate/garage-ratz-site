@@ -10,7 +10,7 @@ const { PORT, NODE_ENV, CMS_APP_API_URL } = process.env;
 const dev = NODE_ENV === 'development';
 
 
-polka.use((req, res, next) => {
+polka().use((req, res, next) => {
 	res.locals.nonce = uuid();
 	next();
 });
@@ -19,7 +19,7 @@ polka().use(
         helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'", "CMS_APP_API_URL", "garageratz.com:*"],
+          defaultSrc: ["'self'", "CMS_APP_API_URL", "*.garageratz.com"],
           // Has to be unsafe-eval because %sapper.scripts% uses eval
           // @ts-expect-error
           scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
