@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(createProxyMiddleware('/', {...}));
+app.use(createProxyMiddleware('/', {target: 'https://dash.garageratz.com'}));
 
 app.use(
         helmet({
