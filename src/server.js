@@ -20,9 +20,9 @@ app.use(
         helmet({
       contentSecurityPolicy:{
         directives: {
-                defaultSrc: ["'self'", "https://dash.garageratz.com", "https://cdn.sender.net"],
-                scriptSrc: ["'self' 'unsafe-eval'", (_req, res) => `'nonce-${res.locals.nonce}'`],
-                styleSrc: ["'self' 'unsafe-inline'", "https://cdn.sender.net"],
+                defaultSrc: ["'self'", "https://dash.garageratz.com", "https://cdn.sender.net/accounts_resources/universal.js"],
+                scriptSrc: ["'self' 'unsafe-eval'", "https://cdn.sender.net/accounts_resources/universal.js" , (_req, res) => `'nonce-${res.locals.nonce}'`],
+                styleSrc: ["'self' 'unsafe-inline'"],
                 imgSrc: ["'self'", 'data:', "https://dash.garageratz.com"],
                 connectSrc: ["'self'", "https://dash.garageratz.com","https://localhost:10000", "https://cdn.sender.net"]
                 },
