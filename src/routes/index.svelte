@@ -162,8 +162,8 @@ import Static from '../components/static-placeholder.svelte';
 			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} @ {nextShow.time}</strong>
 		{:else}
-			<h2>WTF Theres nothing Lined Up</h2>
-			<p>Check out links above</p>
+			<h2>WTF There's Nothing Lined Up</h2>
+			<p>Check out the links above</p>
 		{/if}
 
 		{#if nextShow && nextShow.location != null}
