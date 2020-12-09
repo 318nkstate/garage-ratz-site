@@ -56,11 +56,11 @@
 		margin: 0.5em 0 0.5em 0;
 	}
    .card{
-      border: solid white 0.25em;
+      border: solid rgba(255, 255, 255, 0.8) 0.1em;
       width: 25rem;
       margin: 0.5em;
       padding: 1em;
-
+      background-color: rgb(10, 10, 10, 0.8);
    }
    img{
       width: 100%;
