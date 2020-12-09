@@ -8,18 +8,18 @@
    div {
       width: 100vw;
       height: 100%;
-      background-color: white;
+      background-color:#2e2828;;
       padding: 2em 0;
       margin-bottom: 0;
       align-self: flex-end;
    }
    div p {
       text-align: center;
-      color: rgb(22, 22, 22);
+      color: #fcfcfc;
       font-size: 1.5em;
    }
    nav {
-      color: rgb(22, 22, 22);
+      color: #fcfcfc;
       display: flex;
       flex-direction: row;
       list-style: none;
@@ -36,9 +36,8 @@
    }
    li:hover {
       cursor: pointer;
-      border-top: 0.05em solid #020202;
-      border-bottom: 0.05em solid #020202;
-      transition: 60ms;
+      border-top: 0.05em solid #fdfdfd;
+      border-bottom: 0.05em solid #fdfdfd;
    }
    #EML{
       text-decoration: underline;
