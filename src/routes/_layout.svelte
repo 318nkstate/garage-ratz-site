@@ -1,7 +1,27 @@
+<script context="module">
+   import axios from 'axios';
+  	export async function preload(page, session) {
+      const { CMS_APP_API_URL } = session;
+      let image = [];
+      try{
+         const res = await axios.get(`${CMS_APP_API_URL}/background-pic`);
+			image = res.data;
+			console.log(image);
+      } catch(e) {
+         error = e;
+      }
+		return {
+			image,
+			CMS_APP_API_URL
+		};
+   }
+</script>
 <script>
+	export let image, CMS_APP_API_URL;
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import Static from '../components/static-placeholder.svelte'
+	let theSource = `${CMS_APP_API_URL + image.pic.url}`;
 </script>
 
 <style>
@@ -11,27 +31,45 @@
 		position: relative;
 		min-height: 100%;
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.4);
 		box-sizing: border-box;
 		overflow: hidden;
-		
 	}
 	#c {
 		width: 100%;
 		height: 100%;
-		top: 0;
-		left: 0;
-		position: absolute;
 		pointer-events: none;
+		position: absolute;
 		z-index: -1;
 	}
 </style>
 
+
 <Header />
-<main>
-	<slot></slot>
-	<div id="c">
-		<Static/>
-	</div>
-	<Footer/>
-</main>
+{#if image.pic == null}
+
+	<main>	
+		<slot></slot>
+		<div id="c">
+			<Static/>
+		</div>
+		<Footer/>
+	</main>
+	
+{:else}
+	
+	<main style="
+		background-image: url({theSource});
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		" >
+		<slot></slot>
+		<Footer/>
+	</main>
+
+{/if}
+
+
+
