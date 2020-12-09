@@ -1,5 +1,5 @@
 <script>
-   import logo from 'images/garage-ratz-logo.jpg';
+   import logo from 'images/garage-ratz-logo.png';
    export let segment;
 </script>
 
@@ -8,7 +8,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: white;
+      background-color: #2e2828;
       padding: 2em;
       align-items: center;
    }
@@ -23,7 +23,7 @@
    nav {
       display: flex;
       list-style: none;
-      color: rgb(235, 235, 235);
+      color: rgba(235, 235, 235, 0.4);
       justify-content: space-between;
    }
    li {
@@ -31,17 +31,33 @@
    }
    li:hover {
       cursor: pointer;
-      border-top: 0.15em solid #020202;
-      border-bottom: 0.15em solid #020202;
+      border-top: 0.15em solid #fdfdfd;
+      border-bottom: 0.15em solid #fdfdfd;
       transition: 60ms;
    }
    li:active {
       cursor: pointer;
-      border-top: 0.15em solid #020202;
-      border-bottom: 0.15em solid #020202;
+      border-top: 0.15em solid #fdfdfd;
+      border-bottom: 0.15em solid #fdfdfd;
       transition: 60ms;
    }
 </style>
+<svelte:head>
+   <script>
+      (function (s, e, n, d, er) {
+        s['Sender'] = er;
+        s[er] = s[er] || function () {
+          (s[er].q = s[er].q || []).push(arguments)
+        }, s[er].l = 1 * new Date();
+        var a = e.createElement(n),
+            m = e.getElementsByTagName(n)[0];
+        a.async = 1;
+        a.src = d;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+      sender('8da33a189e8344');
+    </script>
+</svelte:head>
 
 <header>
 <figure>
@@ -59,7 +75,7 @@
             height="66"
             viewBox="0 0 24 24"
             stroke-width="1.2"
-            stroke="#080808"
+            stroke="#fcfcfc"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round">
@@ -80,7 +96,7 @@
             height="66"
             viewBox="0 0 24 24"
             stroke-width="1.2"
-            stroke="#080808"
+            stroke="#fcfcfc"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round">
@@ -101,7 +117,7 @@
             height="66"
             viewBox="0 0 24 24"
             stroke-width="1.2" 
-            stroke="#080808" 
+            stroke="#fcfcfc" 
             fill="none" 
             stroke-linecap="round" 
             stroke-linejoin="round">
@@ -110,7 +126,7 @@
             <path d="M10 9l5 3l-5 3z" />
           </svg>
       </a>
-   </li>  
+   </li>
    <li>
       <a href="https://instagram.com/thegarageratz">
          <svg
@@ -120,7 +136,7 @@
             height="66"
             viewBox="0 0 24 24"
             stroke-width="1.2"
-            stroke="#080808"
+            stroke="#fcfcfc"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round">
@@ -140,7 +156,7 @@
             height="66"
             viewBox="0 0 24 24"
             stroke-width="1.2"
-            stroke="#080808"
+            stroke="#fcfcfc"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round">
@@ -150,5 +166,6 @@
          </svg>
       </a>
    </li>
+
 </nav>
 </header>
