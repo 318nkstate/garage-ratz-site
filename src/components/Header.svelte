@@ -132,5 +132,23 @@
          </svg>
       </a>
    </li>
+   <li>
+      <a href="https://www.youtube.com/channel/UC-gkJTBx24Cew1pSHO-Z34Q">
+         <svg xmlns="http://www.w3.org/2000/svg" 
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="66"
+            height="66"
+            viewBox="0 0 24 24"
+            stroke-width="1.2" 
+            stroke="#080808" 
+            fill="none" 
+            stroke-linecap="round" 
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <rect x="3" y="5" width="18" height="14" rx="4" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+      </a>
+   </li>   
 </nav>
 </header>
