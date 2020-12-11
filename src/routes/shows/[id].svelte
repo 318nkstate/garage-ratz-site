@@ -40,8 +40,10 @@
       <div id="time">
          <p>YMD: {show.date} @ {show.time}</p>
       </div>
-   {#if show.excerpt || show.after_show_post != null}
+   {#if show.excerpt  != null}
       <p>{show.excerpt}</p>
+   {/if}
+   {#if show.after_show_post != null}
       <section>{@html marked(show.after_show_post)}</section>
    {/if}
    </div>

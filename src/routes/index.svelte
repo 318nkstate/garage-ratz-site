@@ -135,6 +135,10 @@ import Static from '../components/static-placeholder.svelte';
 	.posterThisWeek{
 		margin-top: 2em;
 	}
+	#placeholder{
+		min-width: 30em;
+		min-height: 30em;
+	}
 	@media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
@@ -155,7 +159,7 @@ import Static from '../components/static-placeholder.svelte';
 		{#if nextShow.poster != null}
 		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>			
 		{:else}
-		<Static/>
+		<div id="placeholder"><span /></div>
 		{/if}
 
 		{#if nextShow.date != null }
