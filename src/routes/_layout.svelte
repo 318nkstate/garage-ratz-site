@@ -35,11 +35,12 @@
 		flex-direction: column;
 		justify-items: stretch;
 		position: relative;
-		min-height: 100%;
+		height: 100%;
 		width: 100%;
 		background-color: rgba(0, 0, 0, 0.4);
 		box-sizing: border-box;
 		overflow: hidden;
+		margin: 0;
 	}
 	#c {
 		width: 100%;
@@ -70,6 +71,7 @@
 	background-repeat: no-repeat;
 	background-size: 400% 100%;
 	background-attachment: fixed;
+	overflow:hidden;
 	" >
 	<slot></slot>
 	<Footer/>
@@ -82,6 +84,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+	overflow:hidden;
 	" >
 	<slot></slot>
 	<Footer/>
