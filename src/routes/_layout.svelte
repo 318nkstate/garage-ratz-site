@@ -22,12 +22,18 @@
 	import Footer from '../components/Footer.svelte';
 	import Static from '../components/static-placeholder.svelte'
 	let theSource = `${CMS_APP_API_URL + image.pic.url}`;
+	import { onMount } from "svelte";
+	let win;
+	onMount(() => {
+		win = window.innerWidth;
+	});
 </script>
 
 <style>
 	main {
 		display: flex;
 		flex-direction: column;
+		justify-items: stretch;
 		position: relative;
 		min-height: 100%;
 		width: 100%;
@@ -56,20 +62,32 @@
 		<Footer/>
 	</main>
 	
-{:else}
-	
+{:else if win < 600}
+
 	<main style="
-		background-image: url({theSource});
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-		" >
-		<slot></slot>
-		<Footer/>
+	background-image: url({theSource});
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 400% 100%;
+	background-attachment: fixed;
+	" >
+	<slot></slot>
+	<Footer/>
 	</main>
 
+{:else}
+	<main style="
+	background-image: url({theSource});
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	" >
+	<slot></slot>
+	<Footer/>
+	</main>
 {/if}
+
 
 
 
