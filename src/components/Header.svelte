@@ -11,6 +11,8 @@
       background-color: #2e2828;
       padding: 2em;
       align-items: center;
+      width: auto;
+	   overflow-x: hidden;
    }
    figure{
       height: 15em;
