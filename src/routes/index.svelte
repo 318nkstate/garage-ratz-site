@@ -128,12 +128,14 @@ import Static from '../components/static-placeholder.svelte';
 		justify-content:center;
 		border:2px solid  white;
 		margin: 0.5em 0;
+		overflow: hidden;
 	}
 	.upcomingShow > h3, strong{
 		margin: 1em;
 	}
 	.posterThisWeek{
 		margin-top: 2em;
+		width:100%;
 	}
 	#placeholder{
 		min-width: 30em;
@@ -142,6 +144,10 @@ import Static from '../components/static-placeholder.svelte';
 	@media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
+		}
+		.container{
+			margin: 0;
+			padding: 0;
 		}
 	}
 
