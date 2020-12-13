@@ -69,7 +69,7 @@
 	background-image: url({theSource});
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 400% 100%;
+	background-size: 400% 100vh;
 	background-attachment: fixed;
 	overflow:hidden;
 	" >
