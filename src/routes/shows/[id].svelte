@@ -79,10 +79,11 @@
       flex-direction: column;
       flex-wrap:wrap;
       height: auto;
-      align-content: stretch;
+      align-content: center;
       justify-content: center;
       align-items: center;
       margin: auto;
+      width: 100%
    }
    #time{
       display: flex;
