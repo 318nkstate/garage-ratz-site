@@ -19,7 +19,7 @@
 </script>
 <script>
    export let show, CMS_APP_API_URL;
-
+   import ImageModal from "../../components/imageModal.svelte";
 </script>
 
 
