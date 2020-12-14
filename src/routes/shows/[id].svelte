@@ -47,6 +47,14 @@
       <section>{@html marked(show.after_show_post)}</section>
    {/if}
    </div>
+   <div id="show-images">
+      {#each show.show_pics as pics}
+         <ImageModal 
+            smallerImage={CMS_APP_API_URL + pics.formats.small.url}
+            largerImage={CMS_APP_API_URL + pics.formats.large.url}
+         />
+      {/each}
+   </div>
 </div>
 
 <style>
@@ -101,6 +109,14 @@
    #image{
       width: 25em;
       margin: 2em 0 0 0;
+   }
+   #show-images{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 2em;
+      justify-content: center;
+      align-content: center;
    }
    img{
       width: 25em;
