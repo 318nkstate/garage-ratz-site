@@ -125,19 +125,19 @@
          </section>
       {/if}
    </div>
-   {#if show.show_vids.length != 0}
+   {#if show.show_vids.length > 0}
       <div id="show-images">
          {#each show.show_vids as vid}
             <VidComponent source={CMS_APP_API_URL + vid.url} type={vid.mime} />
          {/each}
       </div>
    {/if}
-   {#if show.show_pics.length != 0}
+   {#if show.show_pics.length > 0}
       <div id="show-images">
          {#each show.show_pics as pics}
             <ImageModal
                smallerImage={CMS_APP_API_URL + pics.formats.small.url}
-               largerImage={CMS_APP_API_URL + pics.formats.large.url} />
+               largerImage={CMS_APP_API_URL + pics.formats.small.url} />
          {/each}
       </div>
    {/if}
