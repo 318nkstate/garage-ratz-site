@@ -12,6 +12,7 @@
 	}
 </script>
 <script>
+	import VidComponent from "../components/VidComponent.svelte";
 	export let videos, CMS_APP_API_URL;
 </script>
 <style>
@@ -48,10 +49,9 @@
 </svelte:head>
 <div class="container"> 
 	{#each videos.vids.reverse() as vid}
-		<video controls class="vid">
-         <source src={CMS_APP_API_URL + vid.url} type={vid.mime} >
-			<track kind="captions">
-
-		</video>
+		<VidComponent
+			source={CMS_APP_API_URL + vid.url}
+			type={vid.mime}
+		/>
 	{/each}
 </div>
