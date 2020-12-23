@@ -23,9 +23,9 @@
 	export let image, mobile, CMS_APP_API_URL;
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
-	import Static from '../components/static-placeholder.svelte'
+	import Static from '../components/static-placeholder.svelte';
 	let bigSource = `${CMS_APP_API_URL + image.pic.url}`;
-	let smallSource = `${CMS_APP_API_URL + mobile.Mobile_Background_Pic.large.url}`;
+	let smallSource = `${CMS_APP_API_URL + mobile.Mobile_Background_Pic.url}`;
 	import { onMount } from "svelte";
 	let win;
 	onMount(() => {
