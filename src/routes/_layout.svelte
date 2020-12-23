@@ -3,12 +3,13 @@
   	export async function preload(page, session) {
       const { CMS_APP_API_URL } = session;
       let image = [];
-	  let mobile = [];
+		let mobile = [];
       try{
-         const res0 = await axios.get(`${CMS_APP_API_URL}/mobile-background-pic`);
+			const res0 = await axios.get(`${CMS_APP_API_URL}/mobile-background-pic`);
          const res = await axios.get(`${CMS_APP_API_URL}/background-pic`);
 			image = res.data;
-	      		mobile = res0.data;
+			mobile = res0.data;
+			console.log(mobile);
       } catch(e) {
          error = e;
       }
@@ -45,6 +46,11 @@
 		box-sizing: border-box;
 		overflow: hidden;
 		margin: 0;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		overflow:hidden;
 	}
 	#c {
 		width: 100%;
@@ -52,6 +58,19 @@
 		pointer-events: none;
 		position: absolute;
 		z-index: -1;
+	}
+	@media (max-width: 601px){
+		main {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-attachment: fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			height: 100%;
+			overflow: hidden;
+		}
 	}
 </style>
 
@@ -70,13 +89,7 @@
 {:else if win < 600}
 
 	<main style="
-	background-image: url({smallSource}) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 100%;
-	overflow: hidden;
+	background-image: url({smallSource});
 	" >
 	<slot></slot>
 	<Footer/>
@@ -85,16 +98,14 @@
 {:else}
 	<main style="
 	background-image: url({bigSource});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	overflow:hidden;
 	" >
 	<slot></slot>
 	<Footer/>
 	</main>
 {/if}
+
+
+
 
 
 
