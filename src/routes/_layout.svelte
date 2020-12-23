@@ -14,6 +14,7 @@
       }
 		return {
 			image,
+			mobile,
 			CMS_APP_API_URL
 		};
    }
