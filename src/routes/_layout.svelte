@@ -75,7 +75,7 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100vh;
 	background-attachment: fixed;
-	overflow:hidden;
+	overflow-x:hidden;
 	" >
 	<slot></slot>
 	<Footer/>
