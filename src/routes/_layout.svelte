@@ -20,7 +20,7 @@
    }
 </script>
 <script>
-	export let image, CMS_APP_API_URL;
+	export let image, mobile, CMS_APP_API_URL;
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import Static from '../components/static-placeholder.svelte'
