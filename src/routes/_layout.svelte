@@ -8,7 +8,7 @@
          const res0 = await axios.get(`${CMS_APP_API_URL}/mobile-background-pic`);
          const res = await axios.get(`${CMS_APP_API_URL}/background-pic`);
 			image = res.data;
-	      		mobile = res0.data
+	      		mobile = res0.data;
       } catch(e) {
          error = e;
       }
