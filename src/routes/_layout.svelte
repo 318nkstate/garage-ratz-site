@@ -71,9 +71,10 @@
 
 	<main style="
 	background-image: url({smallSource});
+	background-size: cover
 	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: local;
 	overflow-x:hidden;
 	" >
 	<slot></slot>
