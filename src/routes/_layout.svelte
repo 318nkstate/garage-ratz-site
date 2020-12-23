@@ -71,7 +71,7 @@
 
 	<main style="
 	background-image: url({smallSource});
-	background-size: cover
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: local;
