@@ -70,12 +70,13 @@
 {:else if win < 600}
 
 	<main style="
-	background-image: url({smallSource});
+	background-image: url({smallSource}) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: local;
-	overflow-x:hidden;
+	height: 100%;
+	overflow: hidden;
 	" >
 	<slot></slot>
 	<Footer/>
