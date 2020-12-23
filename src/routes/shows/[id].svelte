@@ -106,7 +106,7 @@
 <div id="container">
    <div id="image">
       {#if show.poster != null}
-         <img src={CMS_APP_API_URL + show.poster.formats.medium.url} alt="" />
+         <img src={CMS_APP_API_URL + show.poster.formats.small.url} alt="" />
       {:else}
          <Static />
       {/if}
