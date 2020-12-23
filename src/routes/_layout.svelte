@@ -3,7 +3,9 @@
   	export async function preload(page, session) {
       const { CMS_APP_API_URL } = session;
       let image = [];
+	  let mobile = [];
       try{
+         const res0 = await axios.get(`${CMS_APP_API_URL}/mobile-background-pic`);
          const res = await axios.get(`${CMS_APP_API_URL}/background-pic`);
 			image = res.data;
 			console.log(image);
@@ -21,7 +23,8 @@
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import Static from '../components/static-placeholder.svelte'
-	let theSource = `${CMS_APP_API_URL + image.pic.url}`;
+	let bigSource = `${CMS_APP_API_URL + image.pic.url}`;
+	let smallSource = `${CMS_APP_API_URL + mobile.Mobile_Background_Pic.large.url}`;
 	import { onMount } from "svelte";
 	let win;
 	onMount(() => {
@@ -66,10 +69,10 @@
 {:else if win < 600}
 
 	<main style="
-	background-image: url({theSource});
+	background-image: url({smallSource});
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 400% 100vh;
+	background-size: cover;
 	background-attachment: fixed;
 	overflow:hidden;
 	" >
@@ -79,7 +82,7 @@
 
 {:else}
 	<main style="
-	background-image: url({theSource});
+	background-image: url({bigSource});
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
