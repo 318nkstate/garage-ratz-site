@@ -137,7 +137,7 @@
          {#each show.show_pics as pics}
             <ImageModal
                smallerImage={CMS_APP_API_URL + pics.formats.small.url}
-               largerImage={CMS_APP_API_URL + pics.formats.url} />
+               largerImage={CMS_APP_API_URL + pics.formats.large.url} />
          {/each}
       </div>
    {/if}
