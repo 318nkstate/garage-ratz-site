@@ -73,7 +73,7 @@
 	background-image: url({smallSource});
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: 100% auto;
 	background-attachment: fixed;
 	overflow:hidden;
 	" >
