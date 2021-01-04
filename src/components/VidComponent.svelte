@@ -11,6 +11,7 @@
       padding: 0.25em;
       align-self: center;
       overflow: none;
+      background-color: #000000d9;
    }
    @media (max-width: 680px) {
       .vid {
