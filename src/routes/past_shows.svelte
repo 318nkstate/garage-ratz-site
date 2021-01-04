@@ -1,7 +1,6 @@
 <script context="module">
    import axios from 'axios'
-   import Static from '../components/static-placeholder.svelte';
-  	export async function preload(page, session) {
+  export async function preload(page, session) {
 		const { CMS_APP_API_URL } = session;
       let shows = [];
       try {
