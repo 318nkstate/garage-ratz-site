@@ -28,6 +28,7 @@
 		align-items: center;
 		height: 100%;
 		align-content: center;
+		background-color: #000000d9;
 	}
 </style>
 <svelte:head>
