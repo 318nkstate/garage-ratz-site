@@ -19,6 +19,7 @@
 </script>
 
 <script>
+   import Dropdown from "../../components/Dropdown.svelte";
    import VidComponent from "../../components/VidComponent.svelte";
    import ImageModal from "../../components/imageModal.svelte";
    export let show, CMS_APP_API_URL;
@@ -126,13 +127,20 @@
       {/if}
    </div>
    {#if show.show_vids.length > 0}
+      <Dropdown
+      title={"Vids"}
+      >
       <div id="show-images">
          {#each show.show_vids as vid}
             <VidComponent source={CMS_APP_API_URL + vid.url} type={vid.mime} />
          {/each}
       </div>
+      </Dropdown>
    {/if}
    {#if show.show_pics.length > 0}
+      <Dropdown
+         title={"Pics"}
+      >
       <div id="show-images">
          {#each show.show_pics as pics}
             <ImageModal
@@ -140,5 +148,6 @@
                largerImage={CMS_APP_API_URL + pics.formats.small.url} />
          {/each}
       </div>
+      </Dropdown>
    {/if}
 </div>
