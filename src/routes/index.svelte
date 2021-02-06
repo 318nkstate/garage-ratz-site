@@ -162,13 +162,13 @@ import Static from '../components/static-placeholder.svelte';
 	<div class="divider"/>
 
 	<div class='posterThisWeek'>
-		{#if nextShow.poster !== null }
+		{#if nextShow.poster != null }
 		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>			
 		{:else}
 		<div id="placeholder"><span /></div>
 		{/if}
 
-		{#if nextShow.date !== null }
+		{#if nextShow.date != null }
 			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} @ {nextShow.time}</strong>
 		{:else}
@@ -176,13 +176,13 @@ import Static from '../components/static-placeholder.svelte';
 			<p>Check out the links above</p>
 		{/if}
 
-		{#if nextShow && nextShow.location !== null}
+		{#if nextShow && nextShow.location != null}
 			<strong>LOCATION: {nextShow.location}</strong>
 		{/if}
 	</div>
 	<div class="divider"/>
 	<div id="upcomingShowContainer">
-		{#if upcomingShows.date !== null}
+		{#if upcomingShows.date != null}
 		<h2>Upcoming Shows</h2>
 			{#each upcomingShows.slice(0, 7) as ushow}
 				<div class="upcomingShow">
