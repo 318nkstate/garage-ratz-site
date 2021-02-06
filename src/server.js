@@ -20,12 +20,12 @@ app.use(
         helmet({
       contentSecurityPolicy:{
         directives: {
-                defaultSrc: ["'self'", "https://dash.garageratz.com", "https://cdn.sender.net/accounts_resources/universal.js",  "https://www.google.com/recaptcha/ 'strict-dynamic'"],
-                scriptSrc: ["'self' 'unsafe-eval'", "https://cdn.sender.net/accounts_resources/universal.js", "https://www.google.com/recaptcha/api.js", "https://cdn.jsdelivr.net/gh/cferdinandi/bouncer/dist/bouncer.polyfills.min.js", (_req, res) => `'nonce-${res.locals.nonce}'`],
-                styleSrc: ["'self' 'unsafe-inline'", "https://cdn.sender.net/accounts_resources/forms.css"],
-                imgSrc: ["'self'", 'data:', "https://dash.garageratz.com", "https://cdn.sender.net/accounts_resources/sender-logo-plain.png", "https://cdn.sender.net/accounts_resources/popups/sender-brand.png", "https://media3.giphy.com/"],
-                connectSrc: ["'self'", "https://dash.garageratz.com","https://localhost:10000", "https://cdn.sender.net", "https://stats.sender.net/forms/", "https://www.google.com/recaptcha/api.js", "https://cdn.jsdelivr.net/gh/cferdinandi/bouncer/dist/bouncer.polyfills.min.js", "https://www.gstatic.com/"],
-               mediaSrc: ["'self'", "https://dash.garageratz.com", "https://cdn.sender.net/accounts_resources/universal.js"],
+                defaultSrc: ["'self'", "https://dash.garageratz.com"],
+                scriptSrc: ["'self' 'unsafe-eval'",(_req, res) => `'nonce-${res.locals.nonce}'`],
+                styleSrc: ["'self' 'unsafe-inline'" ],
+                imgSrc: ["'self'", 'data:', "https://dash.garageratz.com", ],
+                connectSrc: ["'self'", "https://dash.garageratz.com","https://localhost:10000",],
+               mediaSrc: ["'self'", "https://dash.garageratz.com"],
 		manifestSrc: ["'self'", "https://dash.garageratz.com"]
 		}
         },
