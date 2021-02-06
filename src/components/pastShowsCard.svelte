@@ -11,7 +11,7 @@
 
 <div class="card">
    <div id="img">
-      {#if {poster} !== null}
+      {#if {poster} != null}
          <img src={posterSrc} alt=''>
       {:else}     
          <Static /> 
@@ -19,14 +19,14 @@
    </div>
 
    <h2>{venue}</h2>
-      {#if location !== null}
+      {#if location != null}
          <p>Location: {location}</p>
       {:else}
          <p>Location: Secret</p>
       {/if}
    <i>Date: {date}</i>
 
-   {#if excerpt !== null}
+   {#if excerpt != null}
    <p>{excerpt}</p>
    {/if}
 
