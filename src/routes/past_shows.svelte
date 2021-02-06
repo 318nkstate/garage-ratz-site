@@ -24,7 +24,7 @@
 	const thisYear = new Date().getFullYear();
 	const thisMonth = new Date().getMonth();
 	const thisDate = new Date().getDate();
-   let today = `${thisYear}-${thisMonth + 1}-${thisDate}`;
+   let today = `${thisYear}-${thisDate}-${thisMonth + 1}`;
    const dateSorterAsc = (s1, s2) => ((s1.date > s2.date) ? -1 : (s1.date < s2.date) ? 1 : 0);
    
    onMount(async () => {
