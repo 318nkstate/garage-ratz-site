@@ -29,7 +29,7 @@ import Static from '../components/static-placeholder.svelte';
 	let thisYear = d.getFullYear();
 	let thisMonth = d.getMonth();
 	let thisDate = d.getDate();
-	let today = `${thisYear}-${thisMonth + 1}-${thisDate}`;
+	let today = `${thisYear}-${thisDate}-${thisMonth + 1}`;
 	const dateSorterAsc = (s1, s2) => ((s1.date > s2.date) ? '-1' : (s1.date < s2.date) ? '1' : '0');
 	const dateSorterDesc = (s1, s2) => ((s1.date < s2.date) ? '-1' : (s1.date > s2.date) ? '1' : '0');
 
