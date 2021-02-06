@@ -11,7 +11,7 @@
 
 <div class="card">
    <div id="img">
-      {#if {poster} !== null || undefined}
+      {#if {poster} !== null}
          <img src={posterSrc} alt=''>
       {:else}     
          <Static /> 
@@ -19,7 +19,7 @@
    </div>
 
    <h2>{venue}</h2>
-      {#if location !== null || undefined}
+      {#if location !== null}
          <p>Location: {location}</p>
       {:else}
          <p>Location: Secret</p>
