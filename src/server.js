@@ -11,17 +11,12 @@ const dev = NODE_ENV === 'development';
 
 let app = express();
 
-app.use((req, res, next) => {
-	res.locals.nonce = uuidv4();
-	next();
-});
-
 app.use(
         helmet({
       contentSecurityPolicy:{
         directives: {
                 defaultSrc: ["'self'", "https://dash.garageratz.com"],
-                scriptSrc: ["'self' 'unsafe-eval'",(_req, res) => `'nonce-${res.locals.nonce}'`],
+                scriptSrc: ["'self' 'unsafe-eval'"],
                 styleSrc: ["'self' 'unsafe-inline'" ],
                 imgSrc: ["'self'", 'data:', "https://dash.garageratz.com", ],
                 connectSrc: ["'self'", "https://dash.garageratz.com","https://localhost:10000",],
