@@ -16,7 +16,6 @@ app.use(
       contentSecurityPolicy:{
         directives: {
                 defaultSrc: ["'self'", "https://dash.garageratz.com"],
-                scriptSrc: ["'self' 'unsafe-eval'"],
                 styleSrc: ["'self' 'unsafe-inline'" ],
                 imgSrc: ["'self'", 'data:', "https://dash.garageratz.com", ],
                 connectSrc: ["'self'", "https://dash.garageratz.com","https://localhost:10000",],
