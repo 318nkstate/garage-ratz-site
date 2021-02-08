@@ -21,15 +21,23 @@
    import PastShowsCard from '../components/pastShowsCard.svelte';
    export let shows, CMS_APP_API_URL;
    let pastShows = [];
-	const thisYear = new Date().getFullYear();
-	const thisMonth = new Date().getMonth();
-	const thisDate = new Date().getDate();
-   let today = `${thisYear}-${thisDate}-${thisMonth + 1}`;
+   function today() {
+      const date = new Date();
+      const year = date.getFullYear().toString();
+      const month = (date.getMonth() + 1 < 10) ?
+         "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
+      month.toString();
+      const day = (date.getDate() + 1 < 10) ?
+         ('0' + date.getDate()) : (date.getDate());
+      day.toString();
+      return (`${year}-${month}-${day}`)
+   };
+
    const dateSorterAsc = (s1, s2) => ((s1.date > s2.date) ? -1 : (s1.date < s2.date) ? 1 : 0);
    
    onMount(async () => {
 		for (let i = 0; i < shows.length; i++){
-			if(shows[i].date < today){
+			if(shows[i].date < today()){
             pastShows.push(shows[i]);
             pastShows = pastShows.sort(dateSorterAsc);	
 			} 
