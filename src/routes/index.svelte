@@ -40,7 +40,7 @@ import Static from '../components/static-placeholder.svelte';
 	const dateSorterAsc = (s1, s2) => ((s1.date > s2.date) ? '-1' : (s1.date < s2.date) ? '1' : '0');
 	const dateSorterDesc = (s1, s2) => ((s1.date < s2.date) ? '-1' : (s1.date > s2.date) ? '1' : '0');
 
-	init(){
+	function init(){
 		for (let i = 0; i < shows.length; i++){
 			if(shows[i].date >= today()){
 				upcomingShowsAll.push(shows[i]);	
