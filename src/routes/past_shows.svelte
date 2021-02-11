@@ -35,14 +35,15 @@
 
    const dateSorterAsc = (s1, s2) => ((s1.date > s2.date) ? -1 : (s1.date < s2.date) ? 1 : 0);
    
-   onMount(async () => {
+   function init(){
 		for (let i = 0; i < shows.length; i++){
 			if(shows[i].date < today()){
             pastShows.push(shows[i]);
             pastShows = pastShows.sort(dateSorterAsc);	
 			} 
       }
-	});
+	};
+	init();
 </script>
 
 <style>
