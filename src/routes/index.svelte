@@ -172,15 +172,17 @@ import Static from '../components/static-placeholder.svelte';
 	<div class='posterThisWeek'>
 		{#if nextShow.poster != null }
 		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>			
+		{:else if nextShow.date != null}
+		<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
+			<strong>DATE: {nextShow.date} </strong>
 		{:else}
+		<h2>There's Nothing Lined Up</h2>
 		<div id="placeholder"><span /></div>
 		{/if}
 
-		{#if nextShow.date != null }
+		{#if nextShow.poster != null }
 			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} </strong>
-		{:else}
-			<h2>There's Nothing Lined Up</h2>
 		{/if}
 
 		{#if nextShow && nextShow.location != null}
