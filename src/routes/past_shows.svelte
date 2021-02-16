@@ -112,10 +112,10 @@
 	      {#if pshow.poster = null || undefined}
 		 <Static /> 
 	      {:else}
-		 {#if pshow.poster.formats != null || undefined}
-		 <img src={CMS_APP_API_URL + pshow.poster.formats.small.url} alt=''>
+		 {#if pshow.poster.formats = null || undefined}
+		 <Static />
 		  {:else}
-		   <Static />
+		   <img src={CMS_APP_API_URL + pshow.poster.formats.small.url} alt=''>
 		   {/if}
 	      {/if}
 	   </div>
