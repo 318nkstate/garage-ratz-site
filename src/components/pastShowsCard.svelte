@@ -11,10 +11,10 @@
 
 <div class="card">
    <div id="img">
-      {#if {poster} != null}
-         <img src={posterSrc} alt=''>
-      {:else}     
+      {#if {poster} = null || undefined}
          <Static /> 
+      {:else}     
+         <img src={posterSrc} alt=''>
       {/if}
    </div>
 
