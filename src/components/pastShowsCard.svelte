@@ -1,5 +1,6 @@
 <script>
    import Static from "./static-placeholder.svelte"
+   export const poster;
    export let posterSrc;
    export let slugID;
    export let venue;
@@ -10,7 +11,7 @@
 
 <div class="card">
    <div id="img">
-      {#if {posterSrc} = null || undefined}
+      {#if {poster} === null || undefined}
          <Static /> 
       {:else}     
          <img src={posterSrc} alt=''>
