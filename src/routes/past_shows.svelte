@@ -18,7 +18,7 @@
 
 <script>
    import { onMount } from 'svelte';
-   import PastShowsCard from '../components/pastShowsCard.svelte';
+   import Static from '../components/static-placeholder.svelte';
    export let shows, CMS_APP_API_URL;
    let pastShows = [];
    function today() {
@@ -63,7 +63,41 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		margin: 0.5em 0 0.5em 0;
-	}  
+	} 
+	
+	.card{
+	   border: solid rgba(255, 255, 255, 0.8) 0.1em;
+	   width: 25rem;
+	   margin: 0.5em;
+	   padding: 1em;
+	   background-color: rgb(10, 10, 10, 0.8);
+	}
+	.card:hover{
+	   transition: 200ms;
+	   border-color:rgb(202, 0, 0);
+	   box-shadow: 0 0 3px rgb(202, 35, 35);
+	}
+	img{
+	   width: 100%;
+	   align-self: center;
+	}
+	a{
+	   font-size: 1.5em;
+	}
+	a:hover{
+	   transition: 200ms;
+	   color:rgb(202, 0, 0);
+	   text-shadow: 0 0 3px rgb(202, 35, 35);
+	}
+	@media (max-width: 600px) {
+	   .card{
+	      width: 90vw;
+	   }
+	   #img{
+	      height: auto;
+	      width: 100%;
+	   }
+	}
 </style>
 
 <svelte:head>
@@ -73,14 +107,28 @@
 <h1>Past Shows</h1>
 <div id="container">
    {#each pastShows as pshow}
-      <PastShowsCard 
-         poster={pshow.poster}
-         posterSrc={pshow.poster.formats.small.url}
-         slugID={pshow.id}
-         venue={pshow.venue}
-         location={pshow.location}
-         date={pshow.date}
-         excerpt={pshow.excerpt}
-      />
+	<div class="card">
+	   <div id="img">
+	      {#if {pshow.poster} = null || undefined}
+		 <Static /> 
+	      {:else}     
+		 <img src={CMS_APP_API_URL + pshow.poster.formats.small.url} alt=''>
+	      {/if}
+	   </div>
+
+	   <h2>{venue}</h2>
+	      {#if location != null}
+		 <p>Location: {pshow.location}</p>
+	      {:else}
+		 <p>Location: Secret</p>
+	      {/if}
+	   <i>Date: {pshow.date}</i>
+
+	   {#if excerpt != null}
+	   <p>{pshow.excerpt}</p>
+	   {/if}
+
+	   <p><a href='/shows/{pshow.id}'>more info</a></p>
+	</div>
    {/each}
 </div>
