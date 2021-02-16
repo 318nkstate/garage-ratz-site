@@ -11,10 +11,10 @@
 
 <div class="card">
    <div id="img">
-      {#if {poster} === null || undefined}
+      {#if {posterSrc || poster} === null || undefined}
          <Static /> 
       {:else}     
-         <img src={posterSrc} alt=''>
+         <img src={CMS_APP_API_URL + posterSrc} alt=''>
       {/if}
    </div>
 
