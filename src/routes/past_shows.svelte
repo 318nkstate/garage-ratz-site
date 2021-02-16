@@ -116,7 +116,7 @@
 	      {/if}
 	   </div>
 
-	   <h2>{venue}</h2>
+	   <h2>{pshow.venue}</h2>
 	      {#if pshow.location != null}
 		 <p>Location: {pshow.location}</p>
 	      {:else}
