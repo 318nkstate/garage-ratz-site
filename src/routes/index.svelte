@@ -170,9 +170,11 @@ import Static from '../components/static-placeholder.svelte';
 	<div class="divider"/>
 
 	<div class='posterThisWeek'>
-		{#if nextShow.poster != null }
-		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>			
-		{:else if nextShow.date != null}
+		{#if nextShow.poster != null || undefined}
+		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>
+		{/if}
+		
+		{if nextShow.date != null || undefined}
 		<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} </strong>
 		{:else}
@@ -180,12 +182,12 @@ import Static from '../components/static-placeholder.svelte';
 		<div id="placeholder"><span /></div>
 		{/if}
 
-		{#if nextShow.poster != null }
+		{#if nextShow.poster = null || undefined }
 			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} </strong>
 		{/if}
 
-		{#if nextShow && nextShow.location != null}
+		{#if nextShow && nextShow.location != null || undefined }
 			<strong>LOCATION: {nextShow.location}</strong>
 		{/if}
 	</div>
