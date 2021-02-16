@@ -75,9 +75,7 @@
    {#each pastShows as pshow}
       <PastShowsCard 
          poster={pshow.poster}
-	{/if pshow.poster != null || undefined}
-         posterSrc={CMS_APP_API_URL + pshow.poster.formats.small.url}
-	{/if}
+         posterSrc={pshow.poster.formats.small.url}
          slugID={pshow.id}
          venue={pshow.venue}
          location={pshow.location}
