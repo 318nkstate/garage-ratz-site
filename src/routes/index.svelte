@@ -170,7 +170,7 @@ import Static from '../components/static-placeholder.svelte';
 	<div class="divider"/>
 
 	<div class='posterThisWeek'>
-		{#if nextShow.date != (null || undefined)}
+		{#if nextShow != (null || undefined)}
 			{#if nextShow.poster != (null || undefined)}
 			<img src={CMS_APP_API_URL + nextShow.poster.url} alt='Garage Ratz Next Show Poster'/>
 			{/if}
