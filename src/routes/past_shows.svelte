@@ -73,6 +73,16 @@
 <h1>Past Shows</h1>
 <div id="container">
    {#each pastShows as pshow}
+	{#if pshow.poster = null || undefined}
+		<PastShowsCard 
+		 poster={pshow.poster}
+		 slugID={pshow.id}
+		 venue={pshow.venue}
+		 location={pshow.location}
+		 date={pshow.date}
+		 excerpt={pshow.excerpt}
+		/>
+	{:else}
       <PastShowsCard 
          poster={pshow.poster}
          posterSrc={CMS_APP_API_URL + pshow.poster.formats.small.url}
@@ -82,5 +92,6 @@
          date={pshow.date}
          excerpt={pshow.excerpt}
       />
+	{/if}
    {/each}
 </div>
