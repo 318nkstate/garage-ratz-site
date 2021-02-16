@@ -109,14 +109,10 @@
    {#each pastShows as pshow}
 	<div class="card">
 	   <div id="img">
-	      {#if pshow.poster = null || undefined}
+	      {#if pshow.poster = (null || undefined)}
 		 <Static /> 
 	      {:else}
-		 {#if pshow.poster.formats === null || undefined}
-		 <Static />
-		  {:else}
 		   <img src={CMS_APP_API_URL + pshow.poster.formats.small.url} alt=''>
-		   {/if}
 	      {/if}
 	   </div>
 
