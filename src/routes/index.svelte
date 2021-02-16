@@ -174,7 +174,7 @@ import Static from '../components/static-placeholder.svelte';
 		<img src={CMS_APP_API_URL + nextShow.poster.formats.medium.url} alt='Garage Ratz Next Show Poster'/>
 		{/if}
 		
-		{if nextShow.date != null || undefined}
+		{#if nextShow.date != null || undefined}
 		<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} </strong>
 		{:else}
