@@ -1,6 +1,6 @@
 <script>
    import Static from "./static-placeholder.svelte"
-   export const poster;
+   export let poster;
    export let posterSrc;
    export let slugID;
    export let venue;
