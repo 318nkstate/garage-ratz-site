@@ -11,7 +11,7 @@
 
 <div class="card">
    <div id="img">
-      {#if {posterSrc || poster} === null || undefined}
+      {#if {poster} === null || undefined}
          <Static /> 
       {:else}     
          <img src={CMS_APP_API_URL + posterSrc} alt=''>
