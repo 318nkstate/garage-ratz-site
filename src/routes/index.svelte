@@ -176,19 +176,17 @@ import Static from '../components/static-placeholder.svelte';
 			{/if}
 		<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
 			<strong>DATE: {nextShow.date} </strong>
+		
+			{#if nextShow && nextShow.location != null || undefined }
+				<strong>LOCATION: {nextShow.location}</strong>
+			{/if}
 		{:else}
 		<h2>There's Nothing Lined Up</h2>
 		<div id="placeholder"><span /></div>
 		{/if}
 
-		{#if nextShow.poster = null || undefined }
-			<h2>Next Show: <br> <a href="shows/{nextShow.id}">{nextShow.venue}</a></h2>
-			<strong>DATE: {nextShow.date} </strong>
-		{/if}
 
-		{#if nextShow && nextShow.location != null || undefined }
-			<strong>LOCATION: {nextShow.location}</strong>
-		{/if}
+
 	</div>
 	<div class="divider"/>
 	<div id="upcomingShowContainer">
