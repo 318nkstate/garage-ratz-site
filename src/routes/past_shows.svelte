@@ -109,7 +109,7 @@
    {#each pastShows as pshow}
 	<div class="card">
 	   <div id="img">
-	      {#if {pshow.poster} = null || undefined}
+	      {#if pshow.poster = null || undefined}
 		 <Static /> 
 	      {:else}     
 		 <img src={CMS_APP_API_URL + pshow.poster.formats.small.url} alt=''>
@@ -117,14 +117,14 @@
 	   </div>
 
 	   <h2>{venue}</h2>
-	      {#if location != null}
+	      {#if pshow.location != null}
 		 <p>Location: {pshow.location}</p>
 	      {:else}
 		 <p>Location: Secret</p>
 	      {/if}
 	   <i>Date: {pshow.date}</i>
 
-	   {#if excerpt != null}
+	   {#if pshow.excerpt != null}
 	   <p>{pshow.excerpt}</p>
 	   {/if}
 
