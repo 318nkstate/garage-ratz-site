@@ -1,4 +1,4 @@
 # Garage Ratz website
 
-Uses strapi and sapper-rollup
+sapper-rollup site no longer in use
 
